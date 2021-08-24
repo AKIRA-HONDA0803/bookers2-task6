@@ -5,11 +5,13 @@ class BooksController < ApplicationController
     @user = @book.user
     @newbook = Book.new
     @post_comment = PostComment.new
+    @comment = PostComment.new
   end
 
   def index
     @books = Book.all
     @book = Book.new
+    @comment = PostComment.new
   end
 
   def create

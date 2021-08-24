@@ -68,3 +68,11 @@
     </div>
   </div>
 </div>
+ <% if @comment.errors.any? %>
+<div id="error_explanation">
+  <%=pluralize(@comment.errors.count,"error" )%> prohibited this book from being saved.:
+  <% @comment.errors.full_messages.each do |message| %>
+   <%= message %>
+    <% end %>
+    <% end %>
+    </div>
