@@ -2,9 +2,9 @@
   <div class='row'>
     <div class='col-md-3'>
       <h2>User info</h2>
-      <%= render 'users/info', user: @user  %>
+      <%= render 'users/info', user: @book.user  %>
       <h2 class="mt-3">New book</h2>
-      <%= render 'form', book: @newbook %>
+      <%= render 'books/form', book: @newbook %>
     </div>
     <div class='col-md-8 offset-md-1'>
   		<h2>Book detail</h2>
@@ -58,7 +58,7 @@
 <% end %>
 </div>
 <div>
-<%= form_with(model:[@book, @post_comment], local: true) do |f| %>
+<%= form_with(model:[@book, @comment], local: true) do |f| %>
   <%= f.text_area :comment, rows:'5',placeholder: "", class: 'form-control book_post_comment' %>
   <%= f.submit "送信する" %>
 <% end %>
@@ -73,6 +73,6 @@
   <%=pluralize(@comment.errors.count,"error" )%> prohibited this book from being saved.:
   <% @comment.errors.full_messages.each do |message| %>
    <%= message %>
-    <% end %>
-    <% end %>
+   <% end %>
+   <% end %>
     </div>
