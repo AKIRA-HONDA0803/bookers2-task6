@@ -9,6 +9,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
+    @users = User.find(params[:user_relationships.id])
   end
 
   def create
