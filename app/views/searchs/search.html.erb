@@ -3,5 +3,5 @@
   <%= render 'users/index', users: @records %>
 <% else @model == 'book' %>
   <h3>【Booksモデルの検索結果】検索ワード：<%= @content %></h3>
-    <%= render 'posts/index', posts: @records %>
+    <%= render 'books/index', books: @records %>
 <% end %>

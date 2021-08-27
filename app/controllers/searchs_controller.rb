@@ -1,4 +1,5 @@
 class SearchsController < ApplicationController
+  before_action :authenticate_user!
   def search
     # viewのform_tagにて
     # 選択したmodelの値を@modelに代入。
@@ -34,4 +35,3 @@ class SearchsController < ApplicationController
   end
 end
 
-end
