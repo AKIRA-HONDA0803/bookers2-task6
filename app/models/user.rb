@@ -33,5 +33,4 @@ validates :introduction, length: { maximum: 50 }
     followings.include?(user)
   end
 
-
 end
