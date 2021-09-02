@@ -5,7 +5,7 @@ class PostCommentsController < ApplicationController
     @comment.book_id = @book.id
     @newbook = Book.new
    if @comment.save
-    redirect_to book_path(@book)
+    # redirect_to book_path(@book)
    else
     # @book = Book.new
     # user = @post_comment.user
@@ -15,8 +15,13 @@ class PostCommentsController < ApplicationController
   end
 
   def destroy
-    PostComment.find_by(id: params[:id], book_id: params[:book_id]).destroy
-    redirect_to book_path(params[:book_id])
+    # PostComment.find_by(id: params[:id], book_id: params[:book_id]).destroy
+
+    @book = Book.find(params[:book_id])
+    post_comment = @book.post_comments.find(params[:id])
+    post_comment.destroy
+
+    # redirect_to book_path(params[:book_id])
   end
 
   private
